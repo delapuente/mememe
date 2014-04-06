@@ -1,6 +1,6 @@
 
 function initializeIndex() {
-  newMemeButton.onclick = function (evt) {
+  newPosterButton.onclick = function (evt) {
     evt.preventDefault();
     pickImage(openEditor);
   };

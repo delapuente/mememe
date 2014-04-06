@@ -1,10 +1,17 @@
 {
-  "name": "memeMe!",
-  "description": "Create and share your own memes!",
+  "name": "demotiv!",
+  "description": "Create and share your own demotivational posters!",
   "launch_path": "/index.html",
   "type": "privileged",
+  "developer": {
+    "name": "Uno y uno, diez",
+    "url": "https://github.com/lodr"
+  },
   "permissions": {
-    "device-storage:pictures": { "access": "readwrite" }
+    "device-storage:pictures": {
+      "description": "Allow read and save your demotivational posters",
+      "access": "readwrite"
+    }
   },
   "activities": {
     "share": {

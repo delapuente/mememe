@@ -1,6 +1,6 @@
 
 var THUMB_SIZE = 60;
-var PATH = 'mememe';
+var PATH = 'demotiv';
 
 var DEFAULT_TITLE = 'Procrastination';
 var DEFAULT_EXPLANATION = 'I\'ll find a picture for it later';
@@ -21,7 +21,7 @@ var titleInput = document.getElementById('title-input');
 var explanationInput = document.getElementById('explanation-input');
 var editCloseButton = document.querySelector('#edit-view .close');
 var editDoneButton = document.querySelector('#edit-view .done');
-var newMemeButton = document.getElementById('new-meme');
+var newPosterButton = document.getElementById('new-poster');
 var compositionCanvas = document.getElementById('composition-canvas');
 var posterList = document.getElementById('poster-list');
 
