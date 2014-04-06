@@ -15,6 +15,7 @@
   },
   "activities": {
     "share": {
+      "href": "/index.html",
       "filters": {
         "type": "image/*",
         "number": 1
