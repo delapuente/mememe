@@ -9,7 +9,9 @@ function initializeIndex() {
     var element = evt.target;
     var filePath = getPathFromItem(element);
     var fileName = getName(filePath);
-    var request = picturesStorage.get(filePath);
+
+    /* Use .get() method of device storage to get the contents of a file. */
+    var request = /* Use .get() here */;
     request.onsuccess = function () {
       var picture = request.result;
       if (element.tagName === 'IMG') { viewPicture(fileName, picture); }
@@ -28,31 +30,16 @@ function getPathFromItem(element) {
 }
 
 function viewPicture(fileName, picture) {
-  new MozActivity({
-    name: 'open',
-    data: { filename: fileName, type: picture.type, blob: picture }
-  });
+  /* Use the activity open to request open the picture. */
 }
 
 function sharePicture(fileName, picture) {
-  new MozActivity({
-    name: 'share',
-    data: {
-      type: 'image/*',
-      number: 1,
-      blobs: [picture],
-      filenames: [fileName]
-    }
-  });
+  /* Use the activity share to request share the picture. */
 }
 
 function pickImage(callback) {
-  var activity = new MozActivity({
-    name: 'pick',
-    data: {
-      type: 'image/*'
-    }
-  });
+  /* Use the activity pick to request take an image. */
+  var activity = new MozActivity(/* ... */);
 
   activity.onsuccess = function () {
     var picture = this.result;
@@ -66,9 +53,10 @@ function pickImage(callback) {
 
 function loadPosterList() {
   var posters = [];
-  var cursor = picturesStorage.enumerate(PATH);
+  /* Use .enumerate() to list the contents of a directory via cursor. */
+  var cursor = /* Use .enumerate() here. */;
   cursor.onsuccess = function () {
-    var file = cursor.result;
+    var file = cursor.result; // here is the next file
 
     var filePath = file.name;
     var fileName = getName(filePath);
@@ -82,7 +70,7 @@ function loadPosterList() {
             thumb: URL.createObjectURL(resized)
           });
           posterList.insertBefore(fragment, posterList.children[0]);
-          cursor.continue();
+          cursor.continue(); // use continue when you want to get the next file
         });
       }
       else {

@@ -1,13 +1,8 @@
 
 function initializeEdit() {
 
-  navigator.mozSetMessageHandler('activity', function(request) {
-    var option = request.source;
-    if (option.name === "share") {
-      var blob = option.data.blob || option.data.blobs[0];
-      openEditor(blob);
-    }
-  });
+  /* Set up an activity handler for the share activity to automatically
+  open the editor with the blob send as image (use openEditor(blob)). */
 
   editCloseButton.onclick = function (evt) {
     goTo('index-view');
@@ -26,8 +21,9 @@ function initializeEdit() {
 
 function savePoster() {
   compositionCanvas.toBlob(function (blob) {
-    var request =
-      picturesStorage.addNamed(blob, PATH + '/' + Date.now() + '.jpg');
+    /* Use .addNamed() method of device storage to store a new blob. */
+    var request = /* compose the name and call .addNamed() here. */;
+
     request.onsuccess = function () {
       var filePath = this.result;
       var fileName = getName(filePath);
@@ -65,32 +61,24 @@ function onInputUpdateLabels() {
 function updateLabels(title, explanation) {
   var ctx = compositionCanvas.getContext('2d');
 
-  // Clear the area
-  ctx.fillStyle = 'black';
-  ctx.fillRect(
-    0, TEXTAREA_OFFSET * compositionCanvas.height,
-    compositionCanvas.width, (1 - TEXTAREA_OFFSET) * compositionCanvas.height
-  );
+  /*
+  Clear the area, the area starts at a height of:
+  TEXTAREA_OFFSET * compositionCanvas.height
+  */
 
-  // Write main title
-  ctx.fillStyle = 'white';
-  ctx.font = (TITLE_FONT_SCALE * compositionCanvas.height) + 'px serif';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'hanging';
-  ctx.fillText(
-    title.toUpperCase(),
-    compositionCanvas.width / 2,
-    TITLE_HANGING_OFFSET * compositionCanvas.height
-  );
+  /*
+  Write the main title (notice it is in caps):
+  Font size is TITLE_FONT_SCALE * compositionCanvas.height pixels and serif.
+  Use hanging baseline and position the text in the middle at a hight of:
+  TITLE_HANGING_OFFSET * compositionCanvas.height
+  */
 
-  // Write explanation
-  ctx.font = (EXPLANATION_FONT_SCALE * compositionCanvas.height) + 'px serif';
-  ctx.textBaseline = 'bottom';
-  ctx.fillText(
-    explanation,
-    compositionCanvas.width / 2,
-    EXPLANATION_BOTTOM_OFFSET * compositionCanvas.height
-  );
+  /*
+  Write the explanation:
+  Font size is EXPLANATION_FONT_SCALE * compositionCanvas.height pixels and serif.
+  Use bottom as baseline and position the text in the middle at a hight of:
+  EXPLANATION_BOTTOM_OFFSET * compositionCanvas.height
+  */
 }
 
 function loadInEditor(blob) {

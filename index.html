@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no" />
 
     <!-- Building blocks -->
+    <!-- Add here more building blocks for input areas, lists and icon sets -->
     <link href="css/bb/style/headers.css" rel="stylesheet" type="text/css">
-    <link href="css/bb/style/input_areas.css" rel="stylesheet" type="text/css">
-    <link href="css/bb/style/lists.css" rel="stylesheet" type="text/css">
-    <link href="css/bb/icons/styles/action_icons.css" rel="stylesheet" type="text/css">
     <link href="css/util.css" rel="stylesheet" type="text/css">
 
     <link href="css/demotiv.css" rel="stylesheet" type="text/css">
@@ -28,36 +26,40 @@
   <body>
 
     <section role="region" id="index-view">
-      <header class="fixed">
+      <!-- Take a look at the util.css file and make this header to remain
+      fixed while the list scrolls below. -->
+      <header>
         <menu type="toolbar">
           <a href="#" id="new-poster"><span class="icon icon-compose">
           new meme</span></a>
         </menu>
         <h1>demotiv!</h1>
       </header>
-      <section data-type="list" class="scrollable header">
-        <header>Tap to share!</header>
-        <ul id="poster-list">
-          <li data-template="poster" data-path="{{ path }}">
-            <aside class="pack-end">
-              <img src="{{ thumb }}">
-            </aside>
-            <a href="#" >
-              <p>{{ title }}</p>
-              <p>{{ subtitle }}</p>
-            </a>
-          </li>
-        </ul>
-      </section>
+
+      <!--
+      Add a list here: http://buildingfirefoxos.com/building-blocks/lists.html
+      Uncomment and use this as the unique list item. This is a template,
+      the template engine will remove this from DOM and fill with correct data.
+      -->
+      <!--
+      <li data-template="poster" data-path="{{ path }}">
+        <aside class="pack-end">
+          <img src="{{ thumb }}">
+        </aside>
+        <a href="#" >
+          <p>{{ title }}</p>
+          <p>{{ subtitle }}</p>
+        </a>
+      </li>
+      -->
     </section>
 
     <section role="region" id="edit-view">
-      <header class="fixed">
-        <button class="close">
-          <span class="icon icon-close">close</span>
-        </button>
-        <menu type="toolbar"><button class="done">done</button></menu>
-        <h1>Editing poster</h1>
+      <!-- Complete the header:
+      http://buildingfirefoxos.com/building-blocks/headers.html
+      to include a close and done buttons. Add classes 'close' and 'done' to the
+      button elements accordingly. -->
+      <header>
       </header>
 
       <article class="scrollable header content">

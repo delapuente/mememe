@@ -3,26 +3,6 @@
   "description": "Create and share your own demotivational posters!",
   "launch_path": "/index.html",
   "type": "privileged",
-  "developer": {
-    "name": "Uno y uno, diez",
-    "url": "https://github.com/lodr"
-  },
-  "permissions": {
-    "device-storage:pictures": {
-      "description": "Allow read and save your demotivational posters",
-      "access": "readwrite"
-    }
-  },
-  "activities": {
-    "share": {
-      "href": "/index.html",
-      "filters": {
-        "type": "image/*",
-        "number": 1
-       },
-      "disposition": "window"
-    }
-  },
   "icons": {
     "60": "/icons/60.png",
     "128": "/icons/128.png"
