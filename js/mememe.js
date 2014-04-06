@@ -1,0 +1,4 @@
+
+initializeActivityHandler();
+initializeEdit();
+initializeIndex();

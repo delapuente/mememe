@@ -1,0 +1,17 @@
+
+[hidden] {
+  display: none;
+}
+
+[data-type="list"] aside img {
+  width: auto;
+}
+
+#composition-canvas {
+  width: 100%;
+  height: auto;
+}
+
+#edit-view .preview {
+  margin-bottom: 1.5rem;
+}

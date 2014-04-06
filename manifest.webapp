@@ -1,0 +1,22 @@
+{
+  "name": "memeMe!",
+  "description": "Create and share your own memes!",
+  "launch_path": "/index.html",
+  "type": "privileged",
+  "permissions": {
+    "device-storage:pictures": { "access": "readwrite" }
+  },
+  "activities": {
+    "share": {
+      "filters": {
+        "type": "image/*",
+        "number": 1
+       },
+      "disposition": "window"
+    }
+  },
+  "icons": {
+    "60": "/icons/60.png",
+    "128": "/icons/128.png"
+  }
+}
