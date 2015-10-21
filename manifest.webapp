@@ -5,7 +5,7 @@
   "type": "privileged",
   "developer": {
     "name": "Uno y uno, diez",
-    "url": "https://github.com/lodr"
+    "url": "https://github.com/delapuente"
   },
   "permissions": {
     "device-storage:pictures": {
